@@ -41,8 +41,4 @@ for url in url_list:
     cur.execute("INSERT INTO article (url, title, content) VALUES (?,?,?);", (article_url, article_title, article_text))
     conn.commit()
     
-
-    print(f"title: {article_title}, url: {article_url}")
-    
-    
 conn.close()
