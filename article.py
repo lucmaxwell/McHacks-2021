@@ -44,4 +44,5 @@ for url in url_list:
 
     print(f"title: {article_title}, url: {article_url}")
     
+    
 conn.close()
