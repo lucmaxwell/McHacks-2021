@@ -2,8 +2,9 @@ from newspaper import Article
 import sqlite3
 import newspaper
 
-sites = ["https://cbc.ca/","https://www.cnn.com/","https://news.ycombinator.com/","https://globalgoodness.ca/en/"]
-# sites to get news from
+#This script will scrape news from the 3 websites below.
+sites = ["https://cbc.ca/","https://news.ycombinator.com/", "https://globalgoodness.ca/en/"]
+
 
 contentUrl = []  # empty array to store all the links
 
@@ -11,7 +12,7 @@ for i in range(len(sites)):     # nested for loop to append all the links to the
     site = newspaper.build(sites[i], memoize_articles=False)
     urls = site.article_urls()
     for j in range(len(urls)):
-        contentUrl.append(urls[i])
+        contentUrl.append(urls[j])
 #URL List to scrape articles from
 url_list = contentUrl
 
@@ -28,17 +29,21 @@ conn.commit()
 
 #For each article in the database, scrape the article, then insert the title, content and url in the sqlite database created.
 for url in url_list:
-    article = Article(url)
+    try: 
+        article = Article(url)
 
-    article.download()
+        article.download()
 
-    article.parse()
+        article.parse()
 
-    article_text = article.text
-    article_title = article.title
-    article_url = url
+        article_text = article.text
+        article_title = article.title
+        article_url = url
+        
+        cur.execute("INSERT INTO article (url, title, content) VALUES (?,?,?);", (article_url, article_title, article_text))
+        conn.commit()
     
-    cur.execute("INSERT INTO article (url, title, content) VALUES (?,?,?);", (article_url, article_title, article_text))
-    conn.commit()
+    except:
+        print()
     
 conn.close()
