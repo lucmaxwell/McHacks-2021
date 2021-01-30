@@ -12,10 +12,11 @@ for i in range(len(sites)):     # nested for loop to append all the links to the
     site = newspaper.build(sites[i], memoize_articles=False)
     urls = site.article_urls()
     for j in range(len(urls)):
-        if urls[j] not in contentUrl:
             contentUrl.append(urls[j])
-#URL List to scrape articles from
+#URL List to scrape articles fro
 url_list = contentUrl
+url_list = list(dict.fromkeys(url_list))
+print(url_list)
 
 #Create the sqlite database:
 conn = sqlite3.connect('articlesdb.sqlite')
