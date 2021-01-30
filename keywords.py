@@ -9,4 +9,13 @@ conn = sqlite3.connect('articlesdb.sqlite')
 
 
 cur = conn.cursor()
-cur.execute("SELECT id FROM article WHERE title LIKE '%?%'", (keyword))
+
+cur.execute("SELECT url FROM article WHERE content LIKE '%Dalhousie%';")
+
+matched_id = cur.fetchall()
+
+conn.commit()
+
+conn.close()
+
+print(matched_id)
