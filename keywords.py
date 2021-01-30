@@ -24,7 +24,6 @@ matched_titles=[]
 for id in matched_id:
     cur.execute("SELECT title FROM article WHERE id={ids};".\
         format(ids=id[0]))
-    print(id[0])
     matched_titles.append(cur.fetchall())
 
 conn.commit()
