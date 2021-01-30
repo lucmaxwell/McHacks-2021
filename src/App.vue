@@ -1,28 +1,58 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>poopoo</p>
+    <Header/>
+    <Articles :articles="articles"/>
   </div>
+
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header';
+import Articles from './components/Articles';
+
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Articles
+   
+  },
+  data(){
+    return {
+      articles: [{
+        id: 1,
+        title: "cute kittens",
+        link: "poop.com"
+
+      },{
+        id: 2,
+        title: "cute puppies",
+        link: "pee.com"
+      }, {
+        id: 3,
+        title: "cute pandas",
+        link: "fart.com"
+      }]
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
 </style>
