@@ -10,7 +10,7 @@ conn = sqlite3.connect('articlesdb.sqlite')
 cur = conn.cursor()
 sql_command = """
     DROP TABLE IF EXISTS article;
-    CREATE TABLE article (url VARCHAR, title VARCHAR, content VARCHAR);
+    CREATE TABLE article (id INTEGER PRIMARY KEY AUTOINCREMENT,url VARCHAR, title VARCHAR, content VARCHAR);
 """
 cur.executescript(sql_command)
 conn.commit()
