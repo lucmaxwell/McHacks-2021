@@ -1,8 +1,19 @@
 from newspaper import Article
 import sqlite3
+import newspaper
 
+sites = ["https://cbc.ca/","https://www.cnn.com/","https://news.ycombinator.com/","https://globalgoodness.ca/en/"]
+# sites to get news from
+
+contentUrl = []  # empty array to store all the links
+
+for i in range(len(sites)):     # nested for loop to append all the links to the contentUrl
+    site = newspaper.build(sites[i], memoize_articles=False)
+    urls = site.article_urls()
+    for j in range(len(urls)):
+        contentUrl.append(urls[i])
 #URL List to scrape articles from
-url_list = ['https://www.cbc.ca/news/canada/alternative-lenders-marketplace-1.5891676','https://www.cbc.ca/news/world/india-farmers-hunger-strike-1.5894769']
+url_list = contentUrl
 
 #Create the sqlite database:
 conn = sqlite3.connect('articlesdb.sqlite')
