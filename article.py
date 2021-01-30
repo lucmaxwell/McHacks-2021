@@ -5,7 +5,7 @@ import sqlite3
 url_list = ['https://www.cbc.ca/news/canada/alternative-lenders-marketplace-1.5891676','https://www.cbc.ca/news/world/india-farmers-hunger-strike-1.5894769']
 
 #Create the sqlite database:
-conn = sqlite3.connect('/Users/fredericmheir/Documents/mchacks8/McHacks-2021/articlesdb.sqlite')
+conn = sqlite3.connect('articlesdb.sqlite')
 
 cur = conn.cursor()
 sql_command = """
@@ -31,6 +31,6 @@ for url in url_list:
     conn.commit()
     
 
-    print("title: "+article_title+", url: "+article_url)
+    print(f"title: {article_title}, url: {article_url}")
     
 conn.close()
