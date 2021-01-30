@@ -2,20 +2,32 @@ from newspaper import Article
 import sqlite3
 import newspaper
 
-keyword="Dalhousie"
+keyword_list=["adore", "good", "happy"]
 
 #Connect to the sqlite database
 conn = sqlite3.connect('articlesdb.sqlite')
-
-
 cur = conn.cursor()
 
-cur.execute("SELECT url FROM article WHERE content LIKE '%Dalhousie%';")
+#For identify articles (by ID) that contain the keywords.
+for keyword in keyword_list:
+    cur.execute("SELECT id FROM article WHERE content LIKE '%{site}%'".\
+        format(site = keyword))
 
 matched_id = cur.fetchall()
 
 conn.commit()
 
-conn.close()
+#Below : To extract content from SQL associated with matched_id
+cur = conn.cursor()
 
-print(matched_id)
+matched_titles=[]
+for id in matched_id:
+    cur.execute("SELECT title FROM article WHERE id={ids};".\
+        format(ids=id[0]))
+    print(id[0])
+    matched_titles.append(cur.fetchall())
+
+conn.commit()
+
+conn.close()
+print(matched_titles)
