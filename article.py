@@ -12,7 +12,8 @@ for i in range(len(sites)):     # nested for loop to append all the links to the
     site = newspaper.build(sites[i], memoize_articles=False)
     urls = site.article_urls()
     for j in range(len(urls)):
-        contentUrl.append(urls[j])
+        if urls[j] not in contentUrl:
+            contentUrl.append(urls[j])
 #URL List to scrape articles from
 url_list = contentUrl
 
