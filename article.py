@@ -47,3 +47,6 @@ for url in url_list:
         print()
     
 conn.close()
+
+
+articles = [[all text from article 1], [all text from article 2], [all text from article 3]]
