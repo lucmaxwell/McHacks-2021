@@ -2,7 +2,7 @@ from newspaper import Article
 import sqlite3
 import newspaper
 
-keyword_list=["adore", "good", "happy"]
+keyword_list=["good", "happy", "feeling", "beautiful", "cheerful", "delightful", "funny", "excited"]
 
 #Connect to the sqlite database
 conn = sqlite3.connect('articlesdb.sqlite')
@@ -21,6 +21,7 @@ conn.commit()
 cur = conn.cursor()
 
 matched_titles=[]
+
 for id in matched_id:
     cur.execute("SELECT title FROM article WHERE id={ids};".\
         format(ids=id[0]))
@@ -29,4 +30,5 @@ for id in matched_id:
 conn.commit()
 
 conn.close()
+
 print(matched_titles)
