@@ -3,7 +3,7 @@ import sqlite3
 import newspaper
 
 #This script will scrape news from the 3 websites below.
-sites = ["https://cbc.ca/","https://news.ycombinator.com/", "https://globalgoodness.ca/en/"]
+sites = ["https://cbc.ca/", "https://globalgoodness.ca/en/"]
 
 
 contentUrl = []  # empty array to store all the links
@@ -47,6 +47,3 @@ for url in url_list:
         print()
     
 conn.close()
-
-
-articles = [[all text from article 1], [all text from article 2], [all text from article 3]]
