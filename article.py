@@ -1,8 +1,9 @@
 from newspaper import Article
 import sqlite3
+import re
 import newspaper
 
-#This script will scrape news from the 3 websites below.
+#This script will scrape news from the 2 websites below.
 sites = ["https://cbc.ca/", "https://globalgoodness.ca/en/"]
 
 
@@ -12,11 +13,12 @@ for i in range(len(sites)):     # nested for loop to append all the links to the
     site = newspaper.build(sites[i], memoize_articles=False)
     urls = site.article_urls()
     for j in range(len(urls)):
+        if not any(re.sub(r'^.+/([^/]+)$', r'\1', urls[j]) in word for word in contentUrl):
             contentUrl.append(urls[j])
-#URL List to scrape articles fro
+
+#URL List to scrape articles from
+
 url_list = contentUrl
-url_list = list(dict.fromkeys(url_list))
-print(url_list)
 
 #Create the sqlite database:
 conn = sqlite3.connect('articlesdb.sqlite')

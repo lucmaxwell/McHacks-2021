@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <p>poopoo</p>
     <Header/>
     <Articles :articles="articles"/>
   </div>
@@ -27,16 +26,19 @@ export default {
       articles: [{
         id: 1,
         title: "cute kittens",
-        link: "poop.com"
+        link: "poop.com",
+        content: "blahablhablhablabhlabhlahbhla"
 
       },{
         id: 2,
         title: "cute puppies",
-        link: "pee.com"
+        link: "pee.com",
+        content: "poepoepoepoepoepoepoe"
       }, {
         id: 3,
         title: "cute pandas",
-        link: "fart.com"
+        link: "fart.com",
+        content: "paepaepaepeapaepae"
       }]
     }
   }
