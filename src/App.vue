@@ -17,9 +17,6 @@ axios.get('http://127.0.0.1:5000').then(resp => {
     console.log(resp.data);
 });
 
-
-
-
 export default {
   name: 'App',
   components: {
