@@ -12,9 +12,12 @@ import Header from './components/Header';
 import Articles from './components/Articles';
 const axios = require('axios');
 
-axios.get('http://127.0.0.1:5000').then(resp => {
+axios.get('http://127.0.0.1:5000',{
+  number: 12
+}).then(resp => {
 
     console.log(resp.data);
+    console.log(resp.id)
 });
 
 

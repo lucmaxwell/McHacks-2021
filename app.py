@@ -7,6 +7,8 @@ def index():
     return render_template('index.html', test="")
 
 @app.route("/",methods = ['GET'])
+def poop();
+    return request.form["number"]
 
 
 # @app.route('/', methods=['POST'])
