@@ -4,7 +4,7 @@ import re
 import newspaper
 
 #This script will scrape news from the 2 websites below.
-sites = ["https://cbc.ca/", "https://globalgoodness.ca/en/"]
+sites = ["https://cbc.ca/", "https://globalgoodness.ca/en/", "https://www.nytimes.com/ca/"]
 
 
 contentUrl = []  # empty array to store all the links
