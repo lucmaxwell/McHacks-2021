@@ -8,8 +8,21 @@
 </template>
 
 <script>
+
 import Header from './components/Header';
 import Articles from './components/Articles';
+const axios = require('axios');
+
+async function makeGetRequest() {
+
+  let res = await axios.get('http://webcode.me');
+
+  let data = res.data;
+  console.log(data);
+}
+
+makeGetRequest();
+
 
 
 
