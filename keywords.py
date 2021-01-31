@@ -21,6 +21,8 @@ conn.commit()
 cur = conn.cursor()
 
 matched_titles=[]
+matched_content=[]
+matched_url=[]
 
 for id in matched_id:
     cur.execute("SELECT title FROM article WHERE id={ids};".\
@@ -29,6 +31,16 @@ for id in matched_id:
 
 conn.commit()
 
-conn.close()
+for id in matched_id:
+    cur.execute("SELECT content FROM article WHERE id={ids};".\
+        format(ids=id[0]))
+    matched_content.append(cur.fetchall())
+conn.commit()
 
-print(matched_titles)
+for id in matched_id:
+    cur.execute("SELECT url FROM article WHERE id={ids};".\
+        format(ids=id[0]))
+    matched_url.append(cur.fetchall())
+conn.commit()
+
+conn.close()
