@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="jumbotron text-center " style="background-image:url('https://t4.ftcdn.net/jpg/03/54/29/63/360_F_354296312_9nlED1RKFEtnuz41Q2vIlRzbYjkEj8zi.jpg');" >
+        <div class="jumbotron text-center header">
             <h1 class="enlarge">Positive News</h1>
             <h3>Restoring Faith in Humanity</h3>
         </div>
@@ -25,5 +25,9 @@ export default {
 .enlarge:hover{
     color: orange;
     transform: scale(1.1);
+}
+.header{
+    
+    background-color: transparent;
 }
 </style>

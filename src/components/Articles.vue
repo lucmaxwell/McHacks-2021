@@ -1,9 +1,9 @@
 <template>
     
-    <div class="container">
+    <div class="container centered" >
         <b-card-group deck>
             <div v-for="article in articles" :key="article.id">
-                <b-card :title="article.title" sub-title="Card subtitle">
+                <b-card :title="article.title" sub-title="subtitle">
                     <b-card-text>{{article.content}}</b-card-text>
                     <a :href="article.link" class="card-link">Full Story...</a>
                 </b-card>
@@ -20,5 +20,11 @@ export default {
 }
 </script>
 <style scoped>
+.centered {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
 
 </style>
