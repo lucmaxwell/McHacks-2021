@@ -61,7 +61,7 @@ def hello_world():
     output = ""
     for i in range(20):
         currContent = matched_content[i][0][0].split("\n")[0] + "..."
-        output += matched_titles[i][0][0] + "\n\n\n" + currContent + "\n\n\n" + matched_url[i][0][0] + "\n\n\n\n"
+        output += str(i) + "\n\n\n" + matched_titles[i][0][0] + "\n\n\n" + currContent + "\n\n\n" + matched_url[i][0][0] + "\n\n\n\n"
 
     return jsonify({'message' : output})
 
