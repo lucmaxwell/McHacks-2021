@@ -1,10 +1,13 @@
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, request,  url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html', test="")
+
+@app.route("/",methods = ['GET'])
+
 
 # @app.route('/', methods=['POST'])
 # def my_form_post():
