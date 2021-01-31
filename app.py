@@ -1,7 +1,10 @@
-from flask import Flask, request, render_template, request,  url_for
+from flask import Flask
+from flask import jsonify
+from flask import request
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 @app.route('/')
 def index():
     return render_template('index.html', test="")
@@ -25,6 +28,11 @@ def poop();
 #         return render_template('index.html', test=result)
 #     else:
 #         return render_template('index.html', test="")
+=======
+@app.route('/', methods=['GET'])
+def hello_world():
+    return jsonify({'message' : 'Hello, World!'})
+>>>>>>> fd7c6fe8ec5fe824aa646e3db687600b330dbb5c
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug=True)
