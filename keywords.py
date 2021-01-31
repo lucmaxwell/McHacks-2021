@@ -44,3 +44,10 @@ for id in matched_id:
 conn.commit()
 
 conn.close()
+
+
+file = open("data.txt", "w", encoding = 'UTF-8')
+file.write("")
+for i in range(len(matched_titles)):
+    file.write(matched_titles[i][0][0] + "\n" + matched_content[i][0][0].split("\n")[0] + "\n" + matched_url[i][0][0] + "\n")
+file.close()
