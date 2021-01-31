@@ -108,7 +108,7 @@ def hello_world():
     conn.commit()
     conn.close()
     output = ""
-    for i in range(len(matched_titles)):
+    for i in range(20):
         currContent = matched_content[i][0][0].split("\n")[0] + "..."
         output += matched_titles[i][0][0] + "\n\n\n" + currContent + "\n\n\n" + matched_url[i][0][0] + "\n\n\n\n"
 
@@ -116,3 +116,4 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
