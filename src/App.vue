@@ -12,8 +12,10 @@ import Header from './components/Header';
 import Articles from './components/Articles';
 const axios = require('axios');
 
-axios.get('http://127.0.0.1:5000',{
-  number: 12
+//const proxyurl = "https://cors-anywhere.herokuapp.com/";
+//const url = 'http://127.0.0.1:5000';
+
+axios.get('https://cors-anywhere.herokuapp.com/http://127.0.0.1:5000',{
 }).then(resp => {
 
     console.log(resp.data);
