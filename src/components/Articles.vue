@@ -3,7 +3,7 @@
     <div class="container centered" >
         <b-card-group deck>
             <div v-for="article in articles" :key="article.id">
-                <b-card :title="article.title" sub-title="subtitle">
+                <b-card :title="article.title">
                     <b-card-text>{{article.content}}</b-card-text>
                     <a :href="article.link" class="card-link">Full Story...</a>
                 </b-card>
