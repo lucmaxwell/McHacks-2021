@@ -1,4 +1,4 @@
-__# Positive News – Restoring Faith in Humanity
+## Positive News – Restoring Faith in Humanity
 
 Especially now with the pandemic, newspapers and newsfeeds are constantly being filled with depressing news, negatively affecting our mental health. Our project aims to solve this issue by having a website where only good news are presented! 
 
